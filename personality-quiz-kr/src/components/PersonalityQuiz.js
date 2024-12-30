@@ -103,12 +103,12 @@ const PersonalityQuiz = () => {
   const IntroScreen = () => (
     <div className="quiz-card">
       <div className="quiz-header">
-        <h2>성격 유형 테스트</h2>
+        <h2>당신의 그리스로마 신화 캐릭터는?</h2>
       </div>
       <div className="quiz-content">
         <div className="intro-text">
           <p className="intro-description">
-            이 테스트는 Big Five 성격 특성을 기반으로 당신의 독특한 성격 프로필을 이해하는 데 도움을 주기 위해 설계되었습니다.
+            이 테스트는 Big Five 성격 특성을 기반으로 당신의 고유한 성격 프로필에 매칭되는 그리스로마신화 속의 캐릭터를 보여줍니다.
           </p>
           
           <div className="intro-features">
@@ -147,51 +147,14 @@ const PersonalityQuiz = () => {
     const results = calculateResults();
     
     return (
-      <div className="quiz-card">
-        <div className="quiz-header">
-          <h2>성격 유형 결과</h2>
-        </div>
-        <div className="quiz-content">
-          <div className="chart-container">
-            <BarChart width={600} height={250} data={results}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="domain" />
-              <YAxis domain={[0, 5]} />
-              <Tooltip />
-              <Bar dataKey="score" fill="#4f46e5" />
-            </BarChart>
-          </div>
-          
-          <div className="results-container">
-            {results.map((result, index) => (
-              <div key={index} className="result-item">
-                <div className="result-header">
-                  <h3>{result.domain}</h3>
-                  <span>{result.score}/5</span>
-                </div>
-                <div className="progress-bar">
-                  <div 
-                    className="progress-fill" 
-                    style={{ width: `${result.score * 20}%` }} 
-                  />
-                </div>
-                <p>{result.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <button 
-            onClick={() => {
-              setShowResults(false);
-              setAnswers({});
-              setCurrentQuestion(0);
-            }}
-            className="quiz-button"
-          >
-            다시 시작하기
-          </button>
-        </div>
-      </div>
+      <Results 
+        results={results} 
+        onRestart={() => {
+          setShowResults(false);
+          setAnswers({});
+          setCurrentQuestion(0);
+        }}
+      />
     );
   }
 

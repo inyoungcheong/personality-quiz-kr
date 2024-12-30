@@ -1,0 +1,66 @@
+/* 결과 페이지 관련 스타일 추가 */
+.personality-type {
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: #4f46e5;
+  }
+  
+  .personality-details {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .personality-details section {
+    margin-bottom: 2rem;
+  }
+  
+  .personality-details h4 {
+    color: #4f46e5;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .strengths-weaknesses {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 1.5rem 0;
+  }
+  
+  .strengths-weaknesses h5 {
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+  }
+  
+  .strengths-weaknesses ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .strengths-weaknesses li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  .strengths-weaknesses li:before {
+    content: "•";
+    color: #4f46e5;
+    position: absolute;
+    left: 0;
+  }
+  
+  .real-world-tips {
+    background: #eef2ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+  }
+  
+  .real-world-tips p {
+    line-height: 1.8;
+    color: #4b5563;
+  }
