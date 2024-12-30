@@ -37,14 +37,15 @@ const questions = [
 ];
 
 const domainDescriptions = {
-  extraversion: "외향성은 사회적 상황에서의 당신의 에너지와 열정을 나타냅니다.",
-  agreeableness: "친화성은 당신이 다른 사람들과 어떻게 어울리고 대하는지를 보여줍니다.",
-  conscientiousness: "성실성은 당신의 조직력과 책임감의 정도를 나타냅니다.",
-  negativeEmotionality: "부정적 정서성은 당신이 불안, 걱정, 스트레스를 느끼는 정도를 나타냅니다.",
-  openMindedness: "개방성은 당신의 호기심과 창의성의 정도를 보여줍니다."
+  extraversion: "외향성은 사회적 상황에서의 에너지와 열정을 나타내.",
+  agreeableness: "친화성은 다른 사람들과의 관계와 상호작용 방식을 보여줘.",
+  conscientiousness: "성실성은 조직력과 책임감의 수준을 나타내.",
+  negativeEmotionality: "부정적 정서성은 감정적 민감도와 안정성을 보여줘.",
+  openMindedness: "개방성은 호기심과 창의성의 정도를 나타내."
 };
 
 const PersonalityQuiz = () => {
+  const [started, setStarted] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
@@ -97,6 +98,50 @@ const PersonalityQuiz = () => {
 
     return results;
   };
+
+  // 인트로 화면
+  const IntroScreen = () => (
+    <div className="quiz-card">
+      <div className="quiz-header">
+        <h2>성격 유형 테스트</h2>
+      </div>
+      <div className="quiz-content">
+        <div className="intro-text">
+          <p className="intro-description">
+            이 테스트는 Big Five 성격 특성을 기반으로 당신의 독특한 성격 프로필을 이해하는 데 도움을 주기 위해 설계되었습니다.
+          </p>
+          
+          <div className="intro-features">
+            <h3>테스트 특징:</h3>
+            <ul>
+              <li>30개의 간단한 질문</li>
+              <li>5가지 주요 성격 특성 분석</li>
+              <li>강점과 성장 가능한 영역 파악</li>
+            </ul>
+          </div>
+
+          <div className="time-estimate">
+            <p>📝 소요 시간: 약 5-10분</p>
+          </div>
+
+          <div className="instructions">
+            <p>✨ 팁: 가능한 한 솔직하게 답변해 주세요. 정답이나 오답은 없습니다.</p>
+          </div>
+        </div>
+
+        <button 
+          onClick={() => setStarted(true)}
+          className="quiz-button primary start-button"
+        >
+          테스트 시작하기
+        </button>
+      </div>
+    </div>
+  );
+
+  if (!started) {
+    return <IntroScreen />;
+  }
 
   if (showResults) {
     const results = calculateResults();

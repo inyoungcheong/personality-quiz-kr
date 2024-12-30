@@ -11,10 +11,75 @@
   .quiz-header {
     padding: 1.5rem;
     border-bottom: 1px solid #eee;
+    text-align: center;
   }
   
   .quiz-content {
     padding: 1.5rem;
+  }
+  
+  .intro-text {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .intro-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #374151;
+    word-break: keep-all;
+  }
+  
+  .intro-features {
+    text-align: left;
+    margin: 2rem auto;
+    max-width: 400px;
+  }
+  
+  .intro-features h3 {
+    color: #4f46e5;
+    margin-bottom: 1rem;
+  }
+  
+  .intro-features ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .intro-features li {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  .intro-features li:before {
+    content: "•";
+    color: #4f46e5;
+    position: absolute;
+    left: 0;
+  }
+  
+  .time-estimate {
+    background: #f3f4f6;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+  }
+  
+  .instructions {
+    color: #6b7280;
+    font-style: italic;
+    margin: 2rem 0;
+  }
+  
+  .start-button {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
   }
   
   .progress-bar {
@@ -135,5 +200,9 @@
   
     .question-text {
       font-size: 1.1rem;
+    }
+  
+    .intro-features {
+      margin: 2rem 1rem;
     }
   }
