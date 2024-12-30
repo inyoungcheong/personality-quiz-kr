@@ -144,7 +144,7 @@ const PersonalityQuiz = () => {
   }
 
   if (showResults) {
-    const results = calculateResults();
+    const Results = calculateResults();
     
     return (
       <Results 
