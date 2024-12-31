@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import './PersonalityQuiz.css';
+import Results from './Results'; 
+import './Results.css'; 
 
 const questions = [
   { id: 1, text: "조용한 편이야.", reverse: true, domain: "extraversion" },
@@ -144,8 +146,9 @@ const PersonalityQuiz = () => {
   }
 
   if (showResults) {
-    const Results = calculateResults();
-    
+    const results = calculateResults();
+    console.log('Calculated Results:', results);
+  
     return (
       <Results 
         results={results} 
